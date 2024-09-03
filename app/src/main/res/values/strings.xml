@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Tugas 2 Hompage</string>
+    <string name="title">PT XYZ</string>
+    <string name="location">Sleman</string>
+    <string name="PembaruanTerakhirValue">16-06-2022 15:00:01</string>
+    <string name="PembaruanSelanjutnyaValue">17-06-2022 15:00:01</string>
+    <string name="CardView1">Katalog Tender</string>
+    <string name="CardView2">Tender Tersimpan</string>
+    <string name="CardView3">Laporan Statistik</string>
+    <string name="CardView4">Pengaturan</string>
+</resources>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="34dp"
+        android:layout_marginRight="34dp"
+        android:layout_marginTop="34dp"
+        />
+
+    <ImageView
+        android:id="@+id/img_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:src="@drawable/outline_location_on_24"
+        android:layout_marginTop="8dp"
+        android:layout_alignLeft="@id/tv_title"
+        />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/img_location"
+        android:text="@string/location"
+        android:layout_marginTop="2dp"
+        android:layout_alignTop="@id/img_location"
+        android:layout_marginLeft="8dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rlDataKatalog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_location"
+        android:layout_marginTop="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@id/tv_title"
+        android:layout_marginEnd="34dp"
+        android:padding="8dp"
+        android:background="@drawable/outline_box">
+
+        <!-- Informasi Perubahan Data Katalog -->
+        <TextView
+            android:id="@+id/tvDataKatalog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/text_description"
+            android:text="Informasi Perubahan Data Katalog"
+            android:textSize="12sp"/>
+
+        <!-- Pembaruan Terakhir -->
+        <RelativeLayout
+            android:id="@+id/rlPembaruanTerakhir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDataKatalog"
+            android:layout_marginTop="4sp"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/tvPembaruanTerakhirLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pembaruan terakhir: "
+                android:textColor="@color/text_description"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:id="@+id/tvPembaruanTerakhirValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tvPembaruanTerakhirLabel"
+                android:text="@string/PembaruanTerakhirValue"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/text_primarycolor"/>
+        </RelativeLayout>
+
+        <!-- Pembaruan Selanjutnya -->
+        <RelativeLayout
+            android:id="@+id/rlPembaruanSelanjutnya"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlPembaruanTerakhir"
+            android:layout_marginTop="4sp"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/tvPembaruanSelanjutnyaLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pembaruan selanjutnya: "
+                android:textColor="@color/text_description"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:id="@+id/tvPembaruanSelanjutnyaValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tvPembaruanSelanjutnyaLabel"
+                android:text="@string/PembaruanSelanjutnyaValue"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/text_primarycolor"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_Katalog_Tender"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        app:cardCornerRadius="9dp"
+        android:layout_below="@+id/rlDataKatalog"
+        android:layout_marginTop="70dp"
+        android:layout_alignLeft="@id/tv_title"
+        android:background="@drawable/button_background"
+        android:elevation="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/icon_manage_search"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/baseline_manage_search_24">
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon_manage_search"
+                android:text="Katalog Tender"
+                android:textSize="16sp"
+                android:textAlignment="center">
+            </TextView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_Tender_Tersimpan"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_below="@+id/rlDataKatalog"
+        android:layout_alignTop="@id/cv_Katalog_Tender"
+        android:layout_toEndOf="@id/cv_Katalog_Tender"
+        android:layout_marginRight="34dp"
+        app:cardCornerRadius="9dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_background"
+        android:elevation="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/icon_tender_tersimpan"
+                android:layout_marginTop="36dp"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/tender_tersimpan">
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon_tender_tersimpan"
+                android:layout_marginTop="28dp"
+                android:text="Tender Tersimpan"
+                android:textSize="16sp"
+                android:textAlignment="center">
+            </TextView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_laporan_statistik"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        app:cardCornerRadius="9dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@id/tv_title"
+        android:layout_below="@id/cv_Katalog_Tender"
+        android:background="@drawable/button_background"
+        android:elevation="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/icon_laporan_statistik"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/baseline_insert_chart_24">
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon_laporan_statistik"
+                android:text="Laporan Statistik"
+                android:textSize="16sp"
+                android:textAlignment="center">
+            </TextView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_pengaturan"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        app:cardCornerRadius="9dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="34dp"
+        android:layout_below="@id/cv_Katalog_Tender"
+        android:background="@drawable/button_background"
+        android:elevation="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/icon_pengaturan"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/baseline_settings_24">
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon_pengaturan"
+                android:text="Pengaturan"
+                android:textSize="16sp"
+                android:textAlignment="center">
+            </TextView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
